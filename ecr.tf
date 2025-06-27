@@ -1,7 +1,3 @@
-provider "aws" {
-  region = var.region
-}
-
 resource "aws_ecr_repository" "gf-hack-ecr" {
   for_each = toset(var.repositoryNames)
 
