@@ -35,19 +35,19 @@ variable "principalArn" {
 }
 
 variable "subnetA" {
-  default = "subnet-048e537a18be6706f"
+  default = "subnet-0c30fe1e420164305"
 }
 
 variable "subnetB" {
-  default = "subnet-06a0f24d3026ec562"
+  default = "subnet-099dff91f9f3d81d8"
 }
 
 variable "subnetC" {
-  default = "subnet-039069fd0e9eee121"
+  default = "subnet-08ccc289d88bf8e49"
 }
 
 variable "securityGroupId" {
-  default = "sg-082dff686a8d79676"
+  default = "sg-03cb165d331a257b5"
 }
 
 variable "accessConfig" {
