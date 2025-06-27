@@ -1,16 +1,29 @@
 //    #############################
+//    ###          ECR          ###
+//    #############################
+
+variable "repositoryNames" {
+  type        = list(string)
+  default     = [
+    "service-uploads-repo",
+    "service-processor-repo",
+    "service-user-repo"
+  ]
+}
+
+//    #############################
 //    ###          SQS          ###
 //    #############################
 
-variable "queue_name" {
+variable "queueName" {
   default = "uploads-events"
 }
 
-variable "visibility_timeout_seconds" {
+variable "visibilityTimeoutSeconds" {
   default = 300
 }
 
-variable "message_retention_seconds" {
+variable "messageRetentionSeconds" {
   default = 3600
 }
 

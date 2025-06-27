@@ -1,11 +1,11 @@
 resource "aws_sqs_queue" "uploads-events-dead-letter" {
-  name = "${var.queue_name}-dead-letter"
+  name = "${var.queueName}-dead-letter"
 }
 
 resource "aws_sqs_queue" "uploads-events" {
-  name                       = var.queue_name
-  visibility_timeout_seconds = var.visibility_timeout_seconds
-  message_retention_seconds  = var.message_retention_seconds
+  name                       = var.queueName
+  visibility_timeout_seconds = var.visibilityTimeoutSeconds
+  message_retention_seconds  = var.messageRetentionSeconds
 
   redrive_policy = jsonencode({
     deadLetterTargetArn = aws_sqs_queue.uploads-events-dead-letter.arn
