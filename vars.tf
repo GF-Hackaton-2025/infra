@@ -15,8 +15,12 @@ variable "repositoryNames" {
 //    ###          SQS          ###
 //    #############################
 
-variable "queueName" {
+variable "uploadsQueueName" {
   default = "uploads-events"
+}
+
+variable "filesProcessorQueueName" {
+  default = "files-processor-events"
 }
 
 variable "visibilityTimeoutSeconds" {
@@ -48,7 +52,7 @@ variable "principalArn" {
 }
 
 variable "subnetA" {
-  default = "subnet-0c30fe1e420164305"
+  default = "subnet-068b5ea27e2820e82"
 }
 
 variable "subnetB" {
