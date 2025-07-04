@@ -56,15 +56,15 @@ variable "subnetA" {
 }
 
 variable "subnetB" {
-  default = "subnet-099dff91f9f3d81d8"
+  default = "subnet-0c7ebe33660c08c49"
 }
 
 variable "subnetC" {
-  default = "subnet-08ccc289d88bf8e49"
+  default = "subnet-0c23b969cdabaed30"
 }
 
 variable "securityGroupId" {
-  default = "sg-03cb165d331a257b5"
+  default = "sg-08361e2d9dc24698e"
 }
 
 variable "accessConfig" {
