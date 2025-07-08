@@ -48,3 +48,9 @@ resource "aws_eks_access_entry" "access" {
   kubernetes_groups = ["gf-hack", "pos-tech"]
   type              = "STANDARD"
 }
+
+provider "kubernetes" {
+  host                   = gf-hack-eks-cluster.aws_eks_cluster.cluster.endpoint
+  cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority[0].data)
+  token                  = gf-hack-eks-cluster.aws_eks_cluster_auth.cluster.token
+}
