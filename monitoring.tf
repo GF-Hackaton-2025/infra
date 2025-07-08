@@ -7,23 +7,18 @@ resource "helm_release" "kube_prometheus_stack" {
 
   create_namespace = true
 
-  providers = {
-    helm       = helm
-    kubernetes = kubernetes
-  }
-
-  set {
-    name  = "grafana.adminPassword"
-    value = "gf-hack"
-  }
-
-  set {
-    name  = "grafana.service.type"
-    value = "LoadBalancer"
-  }
-
-  set {
-    name  = "prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues"
-    value = "false"
-  }
+  set = [
+    {
+      name  = "grafana.adminPassword"
+      value = "gf-hack"
+    },
+    {
+      name  = "grafana.service.type"
+      value = "LoadBalancer"
+    },
+    {
+      name  = "prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues"
+      value = "false"
+    }
+  ]
 }
