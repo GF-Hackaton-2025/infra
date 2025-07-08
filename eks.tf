@@ -22,14 +22,6 @@ provider "kubernetes" {
   token                  = data.aws_eks_cluster_auth.cluster.token
 }
 
-provider "helm" {
-  kubernetes {
-    host                   = aws_eks_cluster.gf-hack-eks.endpoint
-    cluster_ca_certificate = base64decode(aws_eks_cluster.gf-hack-eks.certificate_authority[0].data)
-    token                  = data.aws_eks_cluster_auth.cluster.token
-  }
-}
-
 resource "aws_eks_node_group" "node" {
   cluster_name    = aws_eks_cluster.gf-hack-eks.name
   node_group_name = var.nodeName
