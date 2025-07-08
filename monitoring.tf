@@ -6,8 +6,4 @@ resource "helm_release" "kube_prometheus_stack" {
   version    = "58.3.0"
 
   create_namespace = true
-
-  values = [
-    file("${path.module}/monitoring-values.yaml")
-  ]
 }
