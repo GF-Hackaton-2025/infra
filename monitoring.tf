@@ -1,4 +1,5 @@
 resource "helm_release" "kube_prometheus_stack" {
+  provider   = helm
   name       = "kube-prometheus-stack"
   namespace  = "monitoring"
   repository = "https://prometheus-community.github.io/helm-charts"
